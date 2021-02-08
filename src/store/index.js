@@ -25,7 +25,7 @@ const state = {
 
   /** 設定 */
   settings: {
-    appName: 'GAS 家計簿',
+    appName: '家計簿（食費用）',
     apiUrl: '',
     authToken: '',
     strIncomeItems: '預け金',
