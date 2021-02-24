@@ -95,7 +95,7 @@ function onGet ({ yearMonth }) {
     }
   })
 
-  return list
+  return list,lineNotify
 }
 
 /**
@@ -298,4 +298,32 @@ function isValid (item = {}) {
   if (o !== null && typeof o !== 'number') return false
 
   return true
+  
+}
+
+//LINE NotifyにPOST
+function lineNotify(item){
+  console.log(item)
+ 
+  try {
+    const url  = 'https://notify-api.line.me/api/notify'
+    const token = 'PNcCHCQO82lk5mOF6gUlYnWUvUG7MsECxOUvaK9490G'; //LINE NotifyのToken
+    const params_line = {
+      method: 'post',
+      headers: {
+        'Authorization': 'Bearer '+ token
+      },
+      payload: {
+        message : 'ここのテキストを送る'
+      }
+    }
+
+   const resApp = UrlFetchApp.fetch(url, params_line);
+   console.log(resApp);
+
+  } catch (error) {
+
+    console.log(error);
+
+  }
 }
