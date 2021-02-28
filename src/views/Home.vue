@@ -88,7 +88,7 @@
         :loading="loading"
         :sort-by="'date'"
         :sort-desc="true"
-        :items-per-page="30"
+        :items-per-page="50"
         mobile-breakpoint="0"
       >
         <!-- 日付列 -->
