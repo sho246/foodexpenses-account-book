@@ -71,10 +71,10 @@ export default {
 
       /** バリデーションルール */
       appNameRule: v => v.length <= 30 || '30文字以内で入力してください',
-      stringRule: v => v.length <= 150 || '150文字以内で入力してください',
+      stringRule: v => v.length <= 250 || '150文字以内で入力してください',
       categoryRules: [
         v => createItems(v).length !== 0 || 'カテゴリは1つ以上必要です',
-        v => itemMaxLength(v) <= 10 || '各カテゴリは10文字以内で入力してください'
+        v => itemMaxLength(v) <= 20 || '各カテゴリは20文字以内で入力してください'
       ],
       tagRule: v => itemMaxLength(v) <= 5 || '各タグは4文字以内で入力してください'
     }
