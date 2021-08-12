@@ -1139,10 +1139,10 @@
             categoryRules: [function (t) {
               return 0 !== e(t).length || "カテゴリは1つ以上必要です"
             }, function (e) {
-              return t(e) <= 20 || "各カテゴリは10文字以内で入力してください"
+              return t(e) <= 20 || "各カテゴリは20文字以内で入力してください"
             }],
             tagRule: function (e) {
-              return t(e) <= 5 || "各タグは4文字以内で入力してください"
+              return t(e) <= 10 || "各タグは10文字以内で入力してください"
             }
           }
         },
