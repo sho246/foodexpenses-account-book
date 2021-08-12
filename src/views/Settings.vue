@@ -30,14 +30,14 @@
       <v-text-field
         label="予算カテゴリ"
         v-model="settings.strIncomeItems"
-        :counter="150"
+        :counter="250"
         :rules="[stringRule, ...categoryRules]"
       />
       <!-- 支出カテゴリ -->
       <v-text-field
         label="支出カテゴリ"
         v-model="settings.strOutgoItems"
-        :counter="150"
+        :counter="250"
         :rules="[stringRule, ...categoryRules]"
       />
       <!-- タグ -->
