@@ -261,7 +261,38 @@ function insertTemplate (yearMonth) {
   sheet.getRange('L2:L')
     .setNumberFormat('0.0%')
 
+  //支出傾向①
+  sheet.getRange('N1:O1')
+    .setBorder(null, null, true, null, null, null, 'black', SOLID_MEDIUM)
+  
+  sheet.getRange('N1')
+   .setValue('支出傾向（食費のみ）')
+   .setFontWeight('bold')
+
+  sheet.getRange('N2:N5')
+   .setValues([['食費だけの合計', '１日平均', '１週間平均', '今月支出予測']])
+  
+  sheet.getRange('O2:O5')
+   .setFormulas([['=SUMIFS(G7:G,D7:D,"*食費*")'], ['=SUMIFS(G7:G,D7:D,"*食費*")/day(today())'], ['=O3*7'],['=O3*DAY(EOMONTH(TODAY(),0))']])
+
+  //支出傾向②
+  sheet.getRange('N7:O7')
+    .setBorder(null, null, true, null, null, null, 'black', SOLID_MEDIUM)
+  
+  sheet.getRange('N7')
+   .setValue('支出傾向（全て）')
+   .setFontWeight('bold')
+
+  sheet.getRange('N8:N10')
+   .setValues([['１日平均', '１週間平均', '今月支出予測']])
+  
+  sheet.getRange('O8:O10')
+   .setFormulas([['=TEXT(SUM(G7:G)/day(today()),"#,##0")'], ['=TEXT(O8*7,"#,##0")'], ['=TEXT(O8*DAY(EOMONTH(TODAY(),0)),"#,##0")']])
+
+
+  //列の幅調整
   sheet.setColumnWidth(9, 21)
+  sheet.setColumnWidth(13, 21)
 
   return sheet
 }
