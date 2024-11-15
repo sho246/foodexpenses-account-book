@@ -4,7 +4,7 @@ module.exports = {
   transpileDependencies: [
     'vuetify'
   ],
-  publicPath: isProd ? '/foodexpenses-account-book' : '/',
+  publicPath: isProd ? '/foodexpenses-account-book/',
   outputDir: 'docs',
   filenameHashing: false,
   productionSourceMap: false
